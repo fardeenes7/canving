@@ -1,5 +1,4 @@
 import { React, useEffect, useState } from "react";
-import { useSearchParams } from "react-router-dom";
 const styles = [
   {
     name: "Adventurer",
@@ -35,8 +34,6 @@ function Home() {
     
   const [selectedStyle, setSelectedStyle] = useState(styles[0]);
   const title = "React App";
-  //const title = canving;
-  const [link, SetLink] = useState("");
   const [name, setName] = useState("Your Name");
   const [dplink, setDPLink] = useState("");
   useEffect(() => {
@@ -90,6 +87,7 @@ function Home() {
             {randoms.map((random) => (
               <img
                 key={random.name}
+                alt={random.name}
                 src={`https://avatars.dicebear.com/api/${selectedStyle.slug}/${random.name}.svg`}
                 className="rounded-full h-20 bg-white p-2 border-2 border-black"
               />
